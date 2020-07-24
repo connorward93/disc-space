@@ -1,0 +1,30 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  position: relative;
+  color: white;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: 0;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #666666;
+  border-radius: 24px;
+  height: 5px;
+}
+progress::-webkit-progress-value {
+  background-color: #eaeaea;
+  border-radius: 24px;
+  height: 5px;
+}
