@@ -51,25 +51,28 @@ const generateArtwork = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pictureData: Array<{ format: string; data: any }>
 ) => {
-  // Generate image using binary data from metadata
-  const img = `data:${
-    pictureData[0].format
-  };base64,${pictureData[0].data.toString('base64')}`;
-  const data = img.replace(/^data:image\/\w+;base64,/, '');
-  const buf = Buffer.from(data, 'base64');
+  if (pictureData) {
+    // Generate image using binary data from metadata
+    const img = `data:${
+      pictureData[0].format
+    };base64,${pictureData[0].data.toString('base64')}`;
+    const data = img.replace(/^data:image\/\w+;base64,/, '');
+    const buf = Buffer.from(data, 'base64');
 
-  // Save image file
-  const format = pictureData[0].format.split('/')[1];
-  const path = file.filePath.split(file.fileName);
-  const coverPath = `${path[0]}/${file.album}-cover.${format}`;
-  fs.writeFile(coverPath, buf, () => {
-    return true;
-  });
-  // If image created successfully, return file path
-  if (fs.existsSync(coverPath)) {
-    return coverPath;
+    // Save image file
+    const format = pictureData[0].format.split('/')[1];
+    const path = file.filePath.split(file.fileName);
+    const coverPath = `${path[0]}/${file.album}-cover.${format}`;
+    fs.writeFile(coverPath, buf, () => {
+      return true;
+    });
+    // If image created successfully, return file path
+    if (fs.existsSync(coverPath)) {
+      return coverPath;
+    }
+    // If image not created, return default
+    return `${__dirname}/assets/default.png`;
   }
-  // If image not created, return default
   return `${__dirname}/assets/default.png`;
 };
 
@@ -128,6 +131,7 @@ const readFiles = (folderPath: string) => {
     try {
       files.forEach(async (file: string) => {
         const filePath = `${folderPath}/${file}`;
+
         if (fs.statSync(filePath).isDirectory()) {
           // Restart process if passed a folder instead of file
           readFiles(filePath);
@@ -142,8 +146,10 @@ const readFiles = (folderPath: string) => {
           data.filePath = filePath;
 
           const pictureData = data.picture;
+
           data.artistId = readArtist(data);
           data.albumId = readAlbum(data, pictureData);
+
           data.picture = await findArtwork(data);
 
           trackId += 1;

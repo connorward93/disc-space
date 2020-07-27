@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        disc: '32px repeat(3, minmax(0, 1fr)) 32px',
+        disc: '32px 32px repeat(3, minmax(0, 1fr)) 32px',
         main: '12em 1fr',
       },
     },

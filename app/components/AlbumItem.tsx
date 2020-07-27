@@ -51,8 +51,17 @@ export default function AlbumItem(props: { id: number }) {
               }}
               className="px-1"
             >
-              {track.no}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                className="w-4 h-4"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </button>
+            <div className="px-1">{track.no}</div>
             <div className="px-1">{title}</div>
             <div className="px-1">{album}</div>
             <div className="px-1">{artists}</div>
@@ -105,6 +114,7 @@ export default function AlbumItem(props: { id: number }) {
       </div>
       <div className="mt-4 text-sm text-left">
         <div className="grid grid-cols-disc">
+          <h4> </h4>
           <h4 className="max-w-xs">No.</h4>
           <h4 className="px-1">Song</h4>
           <h4 className="px-1">Album</h4>

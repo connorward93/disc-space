@@ -35,8 +35,17 @@ export default function Songs() {
             }}
             className="px-1"
           >
-            {song.track.no}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="white"
+              className="w-4 h-4"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 5v14l11-7z" />
+            </svg>
           </button>
+          <div className="px-1">{song.track.no}</div>
           <div className="px-1">{song.title}</div>
           <div className="px-1">{song.album}</div>
           <div className="px-1">{song.artists}</div>
@@ -63,6 +72,7 @@ export default function Songs() {
   return (
     <section className="text-left text-sm p-4 h-full">
       <div className="grid grid-cols-disc">
+        <h4> </h4>
         <h4 className="max-w-xs">No.</h4>
         <h4 className="px-1">Song</h4>
         <h4 className="px-1">Album</h4>
