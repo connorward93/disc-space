@@ -1,5 +1,5 @@
 import React from 'react';
-import { selectFolder } from '../data/Library';
+import { selectFolder } from '../../data/Library';
 
 export default function Scan() {
   return (

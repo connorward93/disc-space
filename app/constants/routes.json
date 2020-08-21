@@ -1,7 +1,0 @@
-{
-  "HOME": "/",
-  "ALBUMS": "/albums",
-  "ALBUM": "/albums/:id",
-  "ARTISTS": "/artists",
-  "ARTIST": "/artist/:id"
-}

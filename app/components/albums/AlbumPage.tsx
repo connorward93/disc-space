@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import AlbumItem from '../components/AlbumItem';
+import AlbumItem from './AlbumItem';
 
 export default function Album() {
   // Route - /albums/:id

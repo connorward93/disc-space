@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Playing(props: {
+export default function CurrentlyPlaying(props: {
   currentlyPlaying: { title: string; artist: string; picture: string };
 }) {
   // eslint-disable-next-line react/destructuring-assignment

@@ -1,16 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 // import { clearHistory } from '../../data/Queue';
-import { toggleQueue } from './playerSlice';
+import { toggleQueue } from '../../reducers/playerSlice';
 import { selectFolder } from '../../data/Library';
 
 export default function SecondaryControls() {
   const dispatch = useDispatch();
   return (
     <>
-      {/* <button type="button" onClick={() => clearHistory()}>
-        Clear history
-      </button> */}
       <button type="button" onClick={() => dispatch(toggleQueue())}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

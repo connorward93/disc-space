@@ -6,8 +6,8 @@ import {
   updatePlaying,
   currentlyPlaying,
   playState,
-} from './playerSlice';
-import Progress from './Progress';
+} from '../../reducers/playerSlice';
+import ProgressBar from './ProgressBar';
 import { getNextSong, addToHistory } from '../../data/Queue';
 
 export default function Audio() {
@@ -47,7 +47,7 @@ export default function Audio() {
           e.persist();
         }}
       />
-      <Progress />
+      <ProgressBar />
     </div>
   );
 }

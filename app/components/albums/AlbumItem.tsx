@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToQueue, updateQueue, clearQueue } from '../data/Queue';
-import { updatePlaying, play, pause } from '../features/player/playerSlice';
-import { db } from '../data/Library';
+import { addToQueue, updateQueue, clearQueue } from '../../data/Queue';
+import { updatePlaying, play, pause } from '../../reducers/playerSlice';
+import { db } from '../../data/Library';
 
 export default function AlbumItem(props: { id: number }) {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ export default function AlbumItem(props: { id: number }) {
     }) => {
       const { title, album, artists, id, track } = song;
       return (
-        <div key={id}>
+        <div key={id} className="last:sticky last:top-0">
           <div className="grid grid-cols-disc text-left text-sm text-gray-400 w-full py-3 transition-all ease-linear duration-150 border-b border-gray-800 hover:bg-gray-900">
             <button
               type="button"

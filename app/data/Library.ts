@@ -97,7 +97,7 @@ const readAlbum = (
     db.get('albums')
       .push({
         artist,
-        artistId,
+        artistId: readArtist(file),
         title: file.album,
         artwork,
         id: albumId,

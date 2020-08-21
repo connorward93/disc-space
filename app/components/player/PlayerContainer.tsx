@@ -1,8 +1,8 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { currentlyPlaying, toggleQueue } from './playerSlice';
+import { useSelector } from 'react-redux';
+import { currentlyPlaying } from '../../reducers/playerSlice';
 import Audio from './Audio';
-import Playing from './Playing';
+import Playing from './CurrentlyPlaying';
 import PrimaryControls from './PrimaryControls';
 import SecondaryControls from './SecondaryControls';
 
@@ -10,7 +10,7 @@ export default function Player() {
   const current = useSelector(currentlyPlaying);
 
   return (
-    <div className="fixed bottom-0 w-full grid grid-cols-3 bg-black px-4 py-3 text-xs border-gray-800 border-t">
+    <div className="fixed bottom-0 w-full grid grid-cols-3 bg-black px-4 py-3 text-xs border-gray-800 border-t h-24">
       <div className="flex">
         {current.title && <Playing currentlyPlaying={current} />}
       </div>

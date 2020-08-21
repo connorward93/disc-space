@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import routes from '../constants/routes.json';
 
 export default function Sidebar() {
   return (
@@ -9,22 +8,16 @@ export default function Sidebar() {
         <h4 className="">Music</h4>
         <ul className="text-gray-400">
           <li className="my-1">
-            <Link to={routes.HOME}>Songs</Link>
+            <Link to="/songs">Songs</Link>
           </li>
           <li className="my-1">
-            <Link to={routes.ARTISTS}>Artists</Link>
+            <Link to="/artists">Artists</Link>
           </li>
           <li className="my-1">
-            <Link to={routes.ALBUMS}>Albums</Link>
+            <Link to="/albums">Albums</Link>
           </li>
         </ul>
       </div>
-      {/* <div className="mt-8">
-        <h4 className="">Playlists</h4>
-        <ul className="text-gray-400">
-          <li className="my-1">Summer Mix 2020</li>
-        </ul>
-      </div> */}
     </div>
   );
 }

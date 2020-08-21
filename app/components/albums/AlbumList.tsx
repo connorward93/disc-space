@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { db } from '../data/Library';
-import { updatePlaying, play, pause } from '../features/player/playerSlice';
-import { getAlbum, clearQueue, updateQueue } from '../data/Queue';
+import { db } from '../../data/Library';
+import { updatePlaying, play, pause } from '../../reducers/playerSlice';
+import { getAlbum, clearQueue, updateQueue } from '../../data/Queue';
 
 export default function AlbumList() {
   const dispatch = useDispatch();

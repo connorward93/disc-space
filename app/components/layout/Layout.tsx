@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
-import Sidebar from '../components/Sidebar';
-import Queue from '../features/player/Queue';
-import Player from '../features/player/Player';
-import { displayQueue } from '../features/player/PlayerSlice';
+import Sidebar from './Sidebar';
+import Queue from '../queue/Queue';
+import Player from '../player/PlayerContainer';
+import { displayQueue } from '../../reducers/playerSlice';
 
 type Props = {
   children: ReactNode;

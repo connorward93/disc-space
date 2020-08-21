@@ -1,8 +1,8 @@
 import React, { useRef, MutableRefObject } from 'react';
 import { useSelector } from 'react-redux';
-import { currentlyPlaying, songProgress } from './playerSlice';
+import { currentlyPlaying, songProgress } from '../../reducers/playerSlice';
 
-export default function Progress() {
+export default function ProgressBar() {
   const currentTrack = useSelector(currentlyPlaying);
   const currentProgress = useSelector(songProgress);
   const progress = useRef() as MutableRefObject<HTMLProgressElement>;
